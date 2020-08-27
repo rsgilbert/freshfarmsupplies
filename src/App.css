@@ -1,0 +1,81 @@
+:root {
+  font-size: calc(.6em + 1vw);
+  box-sizing: border-box;
+  --theme-color: #a8b628;
+  --theme-color--dark: #7d881e;
+}
+
+@media(min-width: 50em) {
+  :root {
+      font-size: 1em;
+  }
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+img { 
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container { 
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+
+
+a:link {
+    color: #1476b8;
+    font-weight: bold;
+    text-decoration-line: none;
+}
+
+a:visited {
+    color: #1430b8;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: #b81414;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
