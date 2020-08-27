@@ -1,0 +1,32 @@
+.header {
+    padding: 2em;
+    background-color: var(--theme-color);
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.header-title {
+    flex: 1;
+    margin: 0;
+    text-transform: uppercase;
+    margin-left: 1em;
+    font-size: 1.3rem;
+}
+
+.header-logo {
+    width: 2.3em;
+    /* position: absolute;
+    top: .5em;
+    left: 1em; */
+}
+
+.header-links {
+    display: flex;
+}
+
+.header-links a {
+    padding-left: 1em;
+}

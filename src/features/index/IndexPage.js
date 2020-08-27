@@ -3,14 +3,11 @@ import { Header } from '../../components/Header'
 import './IndexPage.css'
 import { MyButton } from '../../components/MyButton'
 import { useHistory } from 'react-router-dom'
+import { Info } from '../../components/info'
 
 export const IndexPage = props => {
     const history = useHistory()
 
-    const goToPage1 = () => {
-        history.push("/1")
-    }
-    
 
     return (
         <>
@@ -18,13 +15,24 @@ export const IndexPage = props => {
             <div className="container">
                 <div className="index">
                     <h1>
-                        Welcome!
+                        {Info.welcomemessage}
                     </h1>
                     <p>
-                        Thank you for taking time to fill in our feedback form.
+                        {Info.welcomesubtitle}
                     </p>
-                    <MyButton title="Begin" handleClick={ goToPage1 } />
+                    <form className="index-form">
+                        <input 
+                            type="text" 
+                            className="index-input"
+                            placeholder="Message"
+                            />
 
+                        <button 
+                            className="index-button">
+                            SEND
+                        </button>
+
+                    </form>
                 </div>
             </div>
         </>

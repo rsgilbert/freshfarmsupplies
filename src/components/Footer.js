@@ -1,29 +1,16 @@
 import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
+import { Info } from './info'
 
 export const Footer = props => {
 
 
     return (
         <footer className="footer">
-            <div className="footer-main">
-                <div className="col1">
-                    <h1>Questions</h1>
-                    <Link to="/1">Q1</Link> 
-                    <Link to="/2">Q2</Link>
-                    <Link to="/3">Q3</Link> 
-                    <Link to="/4">Q4</Link>
-                    <Link to="/5">Q5</Link> 
-                    <Link to="/6">Q6</Link>
-                </div>
-                {/* <div className="col2">
-                    <Link to="/"><h1>Home</h1></Link>
-
-                </div> */}
-            </div>
-            <p>&copy; Ministry of Finance Planning and Economic Development 2020</p>
-            <p>Uganda</p>
+            <p> {Info.name } </p>
+            <p>{Info.contact }</p>
+            <p>{ Info.email }</p>
         </footer>
     )
 }

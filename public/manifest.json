@@ -1,10 +1,9 @@
 {
-  "short_name": "Feedback React App",
-  "name": "Survey webapp for Treasury Service Center",
+  "short_name": "Ssenyonjo React App",
+  "name": "Personal website for Ssenyonjo Gilbert",
   "icons": [
-  
     {
-      "src": "logo.png",
+      "src": "logo.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }

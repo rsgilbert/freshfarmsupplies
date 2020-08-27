@@ -1,9 +1,9 @@
 .footer {
-    background-color: rgb(192, 201, 178);
+    background-color: var(--theme-color);
     margin-top: 2em;
     padding: 1em 2em;
     padding-bottom: 5em;
-    color:rgb(112, 100, 31);
+    color:white;
 }
 
 .footer-main {
