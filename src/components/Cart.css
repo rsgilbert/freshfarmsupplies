@@ -1,3 +1,29 @@
 .cart {
+    position: relative;
+}
+
+
+.cart-img {
     width: 2.5em;
+}
+
+/* https://stackoverflow.com/a/8965594/10030693 */
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px black;
+    color: white;
+    font-weight: bolder;
+    height: 1.75em; 
+    min-width: 1.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -.3em;
+    
 }

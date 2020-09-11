@@ -1,9 +1,17 @@
 .header {
-    padding: 2em;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.header-container {
+    margin: 0 auto;
+    padding: .5em;
     position: relative;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgb(221, 221, 221);
+    justify-content: center;
+    max-width: 800px;
+    min-width: 80%;
+    
 }
 
 
@@ -26,7 +34,7 @@
 }
 
 .header-links a {
-    padding-left: 1em;
+    padding: 1em;
 }
 
 .header-links li {
@@ -35,6 +43,6 @@
     cursor: pointer;
 }
 
-.header-links-start {
+.header-start {
     flex: 1;
 }

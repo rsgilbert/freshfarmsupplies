@@ -8,11 +8,16 @@ export const Cart = props => {
 
 
     return (
-        <div>
+        <div className="cart">
             <img 
-                className="cart" 
+                className="cart-img" 
                 src={ cart } 
                 alt="cart"/>
+            <div   
+                className="cart-count"
+                >
+                <span>10</span>
+            </div>
         </div>
     )
 

@@ -10,20 +10,20 @@ export const Header = props => {
 
     const goToHome = () => history.push("/")
     return (
-        <header className="header" onClick={goToHome}>  
-            <ul className="header-links header-links-start">
-                <li>
+        <header className="header">  
+            <div className="header-container">
+                <div className="header-start">
                     <img className="header-logo" src={logo} alt="logo" />
-                </li>
-            </ul>
-            <ul className="header-links header-links-end">
-                <li>
-                    <SearchIcon />
-                </li>
-                <li>
-                    <Cart />
-                </li>
-            </ul>
+                </div>    
+                <ul className="header-links header-end">
+                    <li>
+                        <SearchIcon />
+                    </li>
+                    <li>
+                        <Cart />
+                    </li>
+                </ul>
+            </div>
         </header>
     )
 }
