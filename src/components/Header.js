@@ -1,9 +1,9 @@
 import React from 'react'
 import './Header.css'
-import logo from '../logo.jpg'
 import { useHistory } from 'react-router-dom'
-import { Info } from './info'
-
+import logo from '../logo.png'
+import { Cart } from './Cart'
+import { SearchIcon } from './SearchIcon'
 
 export const Header = props => {
     const history = useHistory()
@@ -11,14 +11,17 @@ export const Header = props => {
     const goToHome = () => history.push("/")
     return (
         <header className="header" onClick={goToHome}>  
-            <img className="header-logo" src={logo} alt="logo" />
-            <h1 className="header-title">{ Info.name }</h1>
-            <ul className="header-links">
+            <ul className="header-links header-links-start">
                 <li>
-                    <a>CV</a>
+                    <img className="header-logo" src={logo} alt="logo" />
+                </li>
+            </ul>
+            <ul className="header-links header-links-end">
+                <li>
+                    <SearchIcon />
                 </li>
                 <li>
-                    <a>Blog</a>
+                    <Cart />
                 </li>
             </ul>
         </header>
