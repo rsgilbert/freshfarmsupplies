@@ -3,7 +3,14 @@
     flex-direction: column;
 }
 
+.quantity-form-cart {
+    display: flex;
+    flex-direction: row;
+
+}
+
 .quantity-input {
+    margin-left: .3em;
     max-width: 2em;
 }
 

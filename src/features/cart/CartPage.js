@@ -3,11 +3,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import { selectAllCartItems, cartItemQuantityUpdated } from './cartSlice'
 import { Link } from 'react-router-dom'
 import { QuantityBox } from '../../components/QuantityBox'
-
+import './CartPage.css'
+import { QuantityBoxCart } from '../../components/QuantityBoxCart'
 
 export const CartPage = props => {
     const cart = useSelector(selectAllCartItems)
     const dispatch = useDispatch()
+
+    let total = 0
+    cart.map(cartItem => total += cartItem.price * cartItem.itemQuantity)
 
     
 
@@ -21,7 +25,6 @@ export const CartPage = props => {
 
 
     const renderCartItems = () => cart.map(cartItem => { 
-
         const setItemQuantity = itemQuantity => {
             dispatch(cartItemQuantityUpdated({
                 cartItemId: cartItem.id,
@@ -32,33 +35,51 @@ export const CartPage = props => {
         
         return (
             <li className="cart-item">
-                <div className="cart-item-info">             
-                    <p className="info-desc">Name</p>
+                <div className="cart-item-info">   
+                    <img 
+                        src={cartItem.pictures[0]}
+                        className="cart-item-thumbnail"
+                        />
                     <p>{ cartItem.name }</p>
                 </div>
-                <div className="cart-item-info">
-                    <QuantityBox 
+                <div className="price-and-quantity">
+                    <p>{ cartItem.price }</p>
+                    <QuantityBoxCart 
                         quantity={cartItem.itemQuantity}
                         onQuantityChanged={setItemQuantity} />
+                    <div className="cart-item-info info-desc-total">
+                        <p className="info-desc">Total: </p>
+                        <p>{ cartItem.itemQuantity * cartItem.price }</p>
+                    </div>
                 </div>
-                <div className="cart-item-info">             
-                    <p className="info-desc">Name</p>
-                    <p>{ cartItem.price }</p>
-                </div>
-                <div className="cart-item-info">
-                    <p className="info-desc">Total</p>
-                    <p>{ cartItem.itemQuantity * cartItem.price }</p>
-                </div>
+               
             </li>
         )
     })
     
 
+    if(!cart.length) return renderEmptyCart
+    
     return (
         <div className="cartpage">
-            <h1>Cart</h1>
-            { !cart.length && renderEmptyCart }
-            { renderCartItems() }
+            <h1 className="cartpage-title">Cart</h1>
+            { cart.length && (
+                <div>
+                    <div className="cart-headings cart-item">
+                        <h1>PRODUCT</h1>
+                        <h1>PRICE</h1>
+                    </div>
+                    { renderCartItems() }                    
+                </div>
+            )}
+            <div className="cart-total">
+                <p>
+                    Total
+                </p>
+                <p>
+                    {total}
+                </p>
+            </div>
         </div>
     )
 }

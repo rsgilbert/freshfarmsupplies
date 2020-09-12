@@ -99,7 +99,7 @@ export const ItemPage = props => {
                     <p>
                         {item.description}
                     </p>
-                    <p>{item.quantity} </p>
+                    {/* <p>{item.quantity} </p> */}
                 </div>
                 
 
