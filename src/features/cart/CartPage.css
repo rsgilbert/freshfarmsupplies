@@ -3,6 +3,9 @@
    
 }
 
+.empty-cart {
+    padding: 5em 0;
+}
 
 
 .cart-item {
@@ -75,4 +78,22 @@ h1.cartpage-title {
 
 .cart-total > p {
     margin: 1em;
+}
+
+.checkout {
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-button {
+    flex: 0 0 80%;
+    padding: .8em;
+    background-color: green;
+    border: 0;
+    color: white;
+    border-radius: 4px;
+}
+
+.checkout-button:hover {
+    font-weight: bolder;
 }

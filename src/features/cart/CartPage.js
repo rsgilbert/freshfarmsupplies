@@ -16,7 +16,8 @@ export const CartPage = props => {
     
 
     const renderEmptyCart = (
-        <div>
+        <div className="empty-cart">
+            <h1 className="cartpage-title">Cart</h1>
             <p>
                 Cart is empty. Please add some <Link to="/">items</Link>
             </p>
@@ -59,7 +60,7 @@ export const CartPage = props => {
     
 
     if(!cart.length) return renderEmptyCart
-    
+
     return (
         <div className="cartpage">
             <h1 className="cartpage-title">Cart</h1>
@@ -79,6 +80,10 @@ export const CartPage = props => {
                 <p>
                     {total}
                 </p>
+            </div>
+
+            <div className="checkout">
+                <button  className="checkout-button">CHECK OUT</button>
             </div>
         </div>
     )
