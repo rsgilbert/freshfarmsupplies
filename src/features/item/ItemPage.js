@@ -2,22 +2,26 @@ import React, { useState } from 'react'
 import { getIdFromWindow } from '../../functions'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectItem } from '../itemlist/itemlistSlice'
-import  { cartAdded, selectIsCarted } from '../cart/cartSlice'
+import  { cartAdded, selectIsCarted, selectCartItemQuantity } from '../cart/cartSlice'
 import classNames from 'classnames'
 
 
 import './ItemPage.css'
+import { QuantityBox } from '../../components/QuantityBox'
 
 export const ItemPage = props => {
     const id = getIdFromWindow()
     const item = useSelector(state => selectItem(state, id))
     const pictures = item.pictures
     const [currentPictureIdx, setCurrentPictureIdx] = useState(0)
-    const [quantity, setQuantity] = useState(1)
     const dispatch = useDispatch()
     const isCarted = useSelector(state => selectIsCarted(state, item.id))
+    const cartItemQuantity = useSelector(state => selectCartItemQuantity(state, item.id))
+    const [itemQuantity, setItemQuantity] = useState(isCarted ? cartItemQuantity : 1)
+
+    const onQuantityChanged = itemQuantity => setItemQuantity(itemQuantity)
+
     
-    const onQuantityChanged = e => setQuantity(e.target.value)
     const renderNonCurrentPictures = () => pictures.map((picture, index) => {
         const changeCurrentPicture = () => setCurrentPictureIdx(index)
         
@@ -39,9 +43,8 @@ export const ItemPage = props => {
 
     const addToCart = () => {
         dispatch(cartAdded({ 
-            id: "2",
             ...item,
-            itemQuantity: quantity
+            itemQuantity
         }))
     }
 
@@ -72,22 +75,9 @@ export const ItemPage = props => {
                     </p>
                     <h2>{item.price}</h2>
                     <div>
-                        <form className="quantity-form">
-                            <label  
-                                htmlFor="quantity"
-                                className="quantity-header">
-                                Quantity
-                            </label>
-                            <div className="quantity-input">
-                                <input
-                                    type="number"
-                                    name="quantity"
-                                    placeholder="Quantity"
-                                    value={ quantity }
-                                    onChange={onQuantityChanged}
-                                    />
-                            </div>
-                        </form>
+                        <QuantityBox 
+                            quantity={itemQuantity}
+                            onQuantityChanged={onQuantityChanged} />
                     </div>
                 </div>
                 <div className="item-actions">

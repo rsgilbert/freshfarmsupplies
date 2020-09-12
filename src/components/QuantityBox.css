@@ -1,0 +1,17 @@
+.quantity-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-input {
+    max-width: 2em;
+}
+
+.quantity-input > input {
+    border: 2px solid black;
+    width: 6em;
+    text-align: center;
+    padding: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}

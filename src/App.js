@@ -10,6 +10,7 @@ import { Footer } from './components/Footer'
 import { ItemListPage } from './features/itemlist/ItemListPage';
 import { Header } from './components/Header';
 import { ItemPage } from './features/item/ItemPage';
+import { CartPage } from './features/cart/CartPage';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={ItemListPage} />
               <Route exact path="/items/:itemId" component={ItemPage} />
+              <Route exact path="/cart" component={CartPage} />
               <Redirect to="/" />
             </Switch>
           </div>   

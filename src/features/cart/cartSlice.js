@@ -15,13 +15,19 @@ const cartSlice = createSlice({
             if(!state.cart.find(item => item.id === cartItem.id)) {
                 state.cart.push(cartItem)
             }
-            console.log(cartItem)
-            
-        }
+        },
+
+        cartItemQuantityUpdated(state, action) {
+            const { cartItemId, itemQuantity } = action.payload
+            const item = state.cart.find(item => item.id === cartItemId)
+            item.itemQuantity = itemQuantity
+        },
+
+
     }
 })
 
-export const { cartAdded } = cartSlice.actions
+export const { cartAdded, cartItemQuantityUpdated } = cartSlice.actions
  
 export default cartSlice.reducer
 
@@ -35,6 +41,9 @@ export const selectIsCarted = (state, itemId) => {
     return !!state.cart.cart.find(item => item.id === itemId)
 }
 
-
+export const selectCartItemQuantity = (state, id) => {
+    const cartItem = state.cart.cart.find(item => item.id === id)
+    return cartItem ? cartItem.itemQuantity : undefined
+}
 
 
