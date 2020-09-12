@@ -9,22 +9,25 @@ import {
 import { Footer } from './components/Footer'
 import { ItemListPage } from './features/itemlist/ItemListPage';
 import { Header } from './components/Header';
+import { ItemPage } from './features/item/ItemPage';
 
 
 function App() {
   return (
     <div className="app">
-      <Header />
       <Router>
+        <Header />
         <main>
           <div className="main-container">
             <Switch>
               <Route exact path="/" component={ItemListPage} />
+              <Route exact path="/items/:itemId" component={ItemPage} />
               <Redirect to="/" />
             </Switch>
           </div>   
         </main>
       </Router>
+      <Footer />
     </div>
   );
 }

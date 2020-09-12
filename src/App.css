@@ -3,6 +3,7 @@
   box-sizing: border-box;
   --theme-color: #030303;
   --theme-gray: rgb(112, 112, 112);
+  --theme-dark: #3A3A3A;
   --theme-color--dark: #7d881e;
 }
 
@@ -41,7 +42,7 @@ body {
 
 .main-container { 
     margin: 0 auto;
-    padding: .5em;
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;

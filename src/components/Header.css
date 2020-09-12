@@ -24,6 +24,7 @@
 
 .header-logo {
     width: 5em;
+    cursor: pointer;
     /* position: absolute;
     top: .5em;
     left: 1em; */

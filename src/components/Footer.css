@@ -1,9 +1,9 @@
 .footer {
-    background-color: var(--theme-color);
     margin-top: 2em;
     padding: 1em 2em;
     padding-bottom: 5em;
-    color:white;
+    border-top: 1px solid rgb(221, 221, 221);
+    background-color: whitesmoke;
 }
 
 .footer-main {
@@ -32,5 +32,18 @@
 
 .footer p {
     text-align: center;
-    font-weight: bold;
+    /* font-weight: bold; */
+}
+
+.info-name {
+    text-transform: uppercase;
+    font-size: larger;
+    letter-spacing: 1em;
+
+    /* text-emphasis: ; */
+}
+
+.info-email {
+    color: blue;
+    text-decoration: underline;
 }

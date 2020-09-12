@@ -4,7 +4,11 @@
     flex-direction: column;  
     height: 20em;  
     border-radius: .2em .2em .1em .1em;
-    /* overflow: hidden; */
+    cursor: pointer;
+}
+
+.item-figure:hover {
+    text-decoration: underline;
 }
 
 .item-figure > img {

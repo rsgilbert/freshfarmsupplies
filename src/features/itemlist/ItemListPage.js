@@ -9,8 +9,7 @@ import { CategoriesSidebar } from '../../components/CategoriesSidebar'
 
 export const ItemListPage = props => {
     const itemlist = useSelector(selectAllItems)
-
-    console.log(itemlist)
+    
     const renderItemList = itemlist.map(item => {
         return (
             <Item

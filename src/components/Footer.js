@@ -8,9 +8,9 @@ export const Footer = props => {
 
     return (
         <footer className="footer">
-            <p> {Info.name } </p>
+            <p className="info-name"> {Info.name } </p>
             <p>{Info.contact }</p>
-            <p>{ Info.email }</p>
+            <p className="info-email">{ Info.email }</p>
         </footer>
     )
 }
