@@ -1,0 +1,31 @@
+.item-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;  
+    height: 20em;  
+    border-radius: .2em .2em .1em .1em;
+    /* overflow: hidden; */
+}
+
+.item-figure > img {
+    height: 16em;
+    object-fit: cover;
+}
+
+.item-figure > figcaption {
+    flex: 0 0 20%;
+    padding: .3em;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(226, 213, 213, .5);
+    border-radius: 0 0 .3em .3em;
+}
+
+.item-name {
+    font-weight: bold;
+    flex: 1;
+}
+
+.item-price {
+    font-weight: bold;
+}

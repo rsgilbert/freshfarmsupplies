@@ -1,0 +1,35 @@
+.categories-sidebar {
+    border: 2px solid var(--theme-gray);
+    margin: 0;
+    padding-bottom: 10em;
+ 
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.categories-container > * {
+    margin: 0;
+    padding: .5em;
+}
+
+.categories-sidebar h1 {
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: var(--theme-gray);
+    /* padding: .5em; */
+    color: white;
+}
+
+.categories-sidebar h2 {
+    font-weight: normal;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.categories-sidebar h2:hover {
+    background-color: var(--theme-gray);
+    color: white;
+}

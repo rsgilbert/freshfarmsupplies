@@ -7,19 +7,23 @@ import {
   Switch, Route, Redirect
 } from 'react-router-dom'
 import { Footer } from './components/Footer'
+import { ItemListPage } from './features/itemlist/ItemListPage';
+import { Header } from './components/Header';
 
 
 function App() {
   return (
     <div className="app">
+      <Header />
       <Router>
-        <main className="main">
-          <Switch>
-            <Route exact path="/" component={IndexPage} />
-            <Redirect to="/" />
-          </Switch>
+        <main>
+          <div className="main-container">
+            <Switch>
+              <Route exact path="/" component={ItemListPage} />
+              <Redirect to="/" />
+            </Switch>
+          </div>   
         </main>
-        <Footer/>
       </Router>
     </div>
   );

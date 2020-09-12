@@ -2,6 +2,7 @@
   font-size: calc(.6em + 1vw);
   box-sizing: border-box;
   --theme-color: #030303;
+  --theme-gray: rgb(112, 112, 112);
   --theme-color--dark: #7d881e;
 }
 
@@ -28,6 +29,7 @@
 *:focus {
   outline: none;
 }
+
 img { 
     max-width: 100%;
 }
@@ -37,23 +39,22 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.container { 
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1em;
+.main-container { 
+    margin: 0 auto;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    min-width: 70%;
 }
+
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
-.main {
-  flex: 1;
-}
-
-
 
 a:link {
     color: #1476b8;
