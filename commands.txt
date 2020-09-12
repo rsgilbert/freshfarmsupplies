@@ -1,0 +1,4 @@
+To deploy on firebase
+- Configure firestore on firebase first
+- Run: firebase init
+-

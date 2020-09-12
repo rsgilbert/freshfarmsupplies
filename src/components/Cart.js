@@ -2,13 +2,22 @@ import React from 'react'
 
 import cart from './cart.svg'
 import './Cart.css'
+import { useSelector } from 'react-redux'
+import { selectCartCount } from '../features/cart/cartSlice'
+import { useHistory } from 'react-router-dom'
 
 
 export const Cart = props => {
+    const cartCount = useSelector(selectCartCount)
+    const history = useHistory()
 
+    const goToCart = () => history.push("/cart")
+   
 
     return (
-        <div className="cart">
+        <div 
+            className="cart"
+            onClick={goToCart}>
             <img 
                 className="cart-img" 
                 src={ cart } 
@@ -16,7 +25,7 @@ export const Cart = props => {
             <div   
                 className="cart-count"
                 >
-                <span>10</span>
+                <span>{ cartCount }</span>
             </div>
         </div>
     )

@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { getIdFromWindow } from '../../functions'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { selectItem } from '../itemlist/itemlistSlice'
+import  { cartAdded, selectIsCarted } from '../cart/cartSlice'
+import classNames from 'classnames'
+
+
 import './ItemPage.css'
 
 export const ItemPage = props => {
@@ -10,6 +14,8 @@ export const ItemPage = props => {
     const pictures = item.pictures
     const [currentPictureIdx, setCurrentPictureIdx] = useState(0)
     const [quantity, setQuantity] = useState(1)
+    const dispatch = useDispatch()
+    const isCarted = useSelector(state => selectIsCarted(state, item.id))
     
     const onQuantityChanged = e => setQuantity(e.target.value)
     const renderNonCurrentPictures = () => pictures.map((picture, index) => {
@@ -30,6 +36,14 @@ export const ItemPage = props => {
             )
         } 
     })
+
+    const addToCart = () => {
+        dispatch(cartAdded({ 
+            id: "2",
+            ...item,
+            itemQuantity: quantity
+        }))
+    }
 
     return (
         <div className="itempage">
@@ -77,8 +91,13 @@ export const ItemPage = props => {
                     </div>
                 </div>
                 <div className="item-actions">
-                    <button className="add-to-cart">
-                        ADD TO CART
+                    <button 
+                        className="add-to-cart"
+                        onClick={addToCart}
+                        className={classNames({
+                            iscarted: isCarted
+                        })}>
+                        { isCarted ? "CARTED" : "ADD TO CART" }
                     </button>
                     <button className="buy-it-now">
                         BUY IT NOW

@@ -1,10 +1,22 @@
+.header-complexity {
+    display: flex;
+    flex-direction: column;
+}
 .header {
     border-bottom: 1px solid rgb(221, 221, 221);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+}
+
+.header-placeholder { 
+    height: 5.5em;
 }
 
 .header-container {
     margin: 0 auto;
-    padding: .5em;
+    padding: .2em .5em;
     position: relative;
     display: flex;
     align-items: center;

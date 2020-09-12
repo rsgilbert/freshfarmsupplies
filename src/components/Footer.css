@@ -38,9 +38,13 @@
 .info-name {
     text-transform: uppercase;
     font-size: larger;
-    letter-spacing: 1em;
+    letter-spacing: .6em;
+}
 
-    /* text-emphasis: ; */
+@media(min-width: 35em) {
+    .info-name {
+        letter-spacing: 1em;
+    }
 }
 
 .info-email {

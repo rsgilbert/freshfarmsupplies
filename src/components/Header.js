@@ -10,24 +10,28 @@ export const Header = props => {
     const goToHome = () => { history.push("/") }
 
     return (
-        <header className="header">  
-            <div className="header-container">
-                <div className="header-start">
-                    <Link to="/">
-                        <img className="header-logo"
-                            src={logo} alt="logo" />
-                    </Link>
-                    
-                </div>    
-                <ul className="header-links header-end">
-                    <li>
-                        <SearchIcon />
-                    </li>
-                    <li>
-                        <Cart />
-                    </li>
-                </ul>
-            </div>
-        </header>
+        <div className="header-complexity">
+
+            <div className="header-placeholder"></div>
+            <header className="header">  
+                <div className="header-container">
+                    <div className="header-start">
+                        <Link to="/">
+                            <img className="header-logo"
+                                src={logo} alt="logo" />
+                        </Link>
+                        
+                    </div>    
+                    <ul className="header-links header-end">
+                        <li>
+                            <SearchIcon />
+                        </li>
+                        <li>
+                            <Cart />
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div>
     )
 }
