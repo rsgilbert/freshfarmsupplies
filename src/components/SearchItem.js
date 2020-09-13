@@ -13,7 +13,7 @@ export const SearchItem = ({ item }) => {
 
 
     return (
-        <figure class="searchitem-figure" onClick={goToItemPage}>
+        <figure className="searchitem-figure" onClick={goToItemPage}>
             <img 
                 src={item.pictures[0]}
                 alt="searchitem-image"

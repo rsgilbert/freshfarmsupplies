@@ -1,4 +1,5 @@
 To deploy on firebase
-- Configure firestore on firebase first
+- First run npm run build
+- Configure firestore on firebase first on the console website:
 - Run: firebase init
--
+- Run: firebase deploy

@@ -45,7 +45,7 @@ export const SearchPage = props => {
     const renderSearchItems = () => searchItems.map(item => {
 
         return (
-            <SearchItem item={item} />
+            <SearchItem item={item} key={item.id}/>
         )
     })
         

@@ -48,7 +48,7 @@ export const Footer = props => {
                     href={Info.whatsapp}>
                     <Icon icon={whatsapp} />
                     <div className="social-name">
-                        Whatsapp
+                        WhatsApp
                     </div>
                 </a>
             </div>

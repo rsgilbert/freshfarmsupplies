@@ -22,13 +22,13 @@
 .searchitem-figure > img {
     height: 100%;
     object-fit: cover;
-    flex: 0 0 50%;
+    flex: 1;
     border-radius: 4px;
     margin-right: 7px;
 }
 
 .searchitem-figure > figcaption {
-    flex: 0 0 50%;
+    flex: 1;
     padding: .3em;
     display: flex;
     flex-direction: column;

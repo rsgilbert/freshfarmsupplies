@@ -3,11 +3,11 @@
 }
 
 .searchbox {
-    line-height: 2;
     border-radius: 4px;
     border: 1px solid var(--theme-dark);
     display: flex;
-    padding: 1px;
+    flex-direction: row;
+    padding: 1px 1px;
     align-items: center;
     justify-content: center;
 }
@@ -38,4 +38,10 @@
     font-weight: bold;
     padding: 4em 0;
 
+}
+
+input {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 }

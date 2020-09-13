@@ -4,5 +4,6 @@
 
 .icon-container {
     display: flex;
-    
+    object-fit: contain;
+
 }
