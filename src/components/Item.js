@@ -23,7 +23,7 @@ export const Item = ({ item }) => {
                     { item.name}
                 </div>
                 <div className="item-price"> 
-                    {item.price}
+                    { item.price.toLocaleString() }
                 </div>
             </figcaption>
         </figure>

@@ -11,6 +11,7 @@ import { ItemListPage } from './features/itemlist/ItemListPage';
 import { Header } from './components/Header';
 import { ItemPage } from './features/item/ItemPage';
 import { CartPage } from './features/cart/CartPage';
+import { SearchPage } from './features/search/SearchPage';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route exact path="/" component={ItemListPage} />
               <Route exact path="/items/:itemId" component={ItemPage} />
               <Route exact path="/cart" component={CartPage} />
+              <Route exact path="/search" component={SearchPage} />
               <Redirect to="/" />
             </Switch>
           </div>   

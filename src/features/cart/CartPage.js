@@ -48,13 +48,13 @@ export const CartPage = props => {
                         <p>{ cartItem.name }</p>
                     </div>
                     <div className="price-and-quantity">
-                        <p>{ cartItem.price }</p>
+                        <p>{ cartItem.price.toLocaleString() }</p>
                         <QuantityBoxCart 
                             quantity={cartItem.itemQuantity}
                             onQuantityChanged={setItemQuantity} />
                         <div className="cart-item-info info-desc-total">
                             <p className="info-desc">Total: </p>
-                            <p>{ cartItem.itemQuantity * cartItem.price }</p>
+                            <p>{ (cartItem.itemQuantity * cartItem.price).toLocaleString() }</p>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export const CartPage = props => {
                     Total
                 </p>
                 <p>
-                    {total}
+                    {total.toLocaleString()}
                 </p>
             </div>
 

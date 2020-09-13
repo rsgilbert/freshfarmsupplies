@@ -4,7 +4,11 @@ import './QuantityBox.css'
 
 export const QuantityBox = props => {
 
-    const onQuantityChanged = e => props.onQuantityChanged(e.target ? e.target.value : 0)
+    const onQuantityChanged = e => {
+        if(e.target.value >= 0) {
+            props.onQuantityChanged(e.target.value)
+        }
+    }
 
     return  (
         <form className="quantity-form">
@@ -16,6 +20,7 @@ export const QuantityBox = props => {
             <div className="quantity-input">
                 <input
                     type="number"
+                    min="1"
                     name="quantity"
                     placeholder="Quantity"
                     value={ props.quantity }

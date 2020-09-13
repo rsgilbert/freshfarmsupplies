@@ -1,3 +1,8 @@
 .icon {
     width: 2.5em;
 }
+
+.icon-container {
+    display: flex;
+    
+}

@@ -6,7 +6,7 @@ import './Icon.css'
 
 export const Icon = props => {
     return (
-        <div>
+        <div className="icon-container">
             <img 
                 className="icon" 
                 src={ props.icon } 
