@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './CategoriesSidebar.css'
-import expand from '../svg/expand.svg'
-import collapse from '../svg/collapse.svg'
+import expand from '../icons/expand.svg'
+import collapse from '../icons/collapse.svg'
 
 
 

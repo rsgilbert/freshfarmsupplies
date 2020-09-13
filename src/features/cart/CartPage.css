@@ -7,12 +7,28 @@
     padding: 5em 0;
 }
 
+.cart-item-complexity {
+    border-bottom: 1px solid var(--theme-dark);
+    margin: .5em 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cart-remove-item {
+    width: 5em;
+    margin: 0 auto;
+    color: tomato;
+    border: 1px solid tomato;
+    border-radius: 2px;
+    background-color: white;
+
+}
 
 .cart-item {
     /* border-top:  1px solid var(--theme-dark); */
-    border-bottom: 1px solid var(--theme-dark);
-    padding: 1em;
-    margin: .5em 0;
+
     display: flex;
     justify-content: space-between;
     align-items: center;

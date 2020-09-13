@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectAllCartItems, cartItemQuantityUpdated } from './cartSlice'
+import { selectAllCartItems, cartItemQuantityUpdated, cartItemRemoved } from './cartSlice'
 import { Link } from 'react-router-dom'
 import { QuantityBox } from '../../components/QuantityBox'
 import './CartPage.css'
@@ -33,27 +33,35 @@ export const CartPage = props => {
             }))
         }
 
+        const removeFromCart = () => {
+            dispatch(cartItemRemoved({ id: cartItem.id }))
+        }
         
         return (
-            <li className="cart-item">
-                <div className="cart-item-info">   
-                    <img 
-                        src={cartItem.pictures[0]}
-                        className="cart-item-thumbnail"
-                        />
-                    <p>{ cartItem.name }</p>
-                </div>
-                <div className="price-and-quantity">
-                    <p>{ cartItem.price }</p>
-                    <QuantityBoxCart 
-                        quantity={cartItem.itemQuantity}
-                        onQuantityChanged={setItemQuantity} />
-                    <div className="cart-item-info info-desc-total">
-                        <p className="info-desc">Total: </p>
-                        <p>{ cartItem.itemQuantity * cartItem.price }</p>
+            <li className="cart-item-complexity">
+                <div className="cart-item">
+                    <div className="cart-item-info">   
+                        <img 
+                            src={cartItem.pictures[0]}
+                            className="cart-item-thumbnail"
+                            />
+                        <p>{ cartItem.name }</p>
+                    </div>
+                    <div className="price-and-quantity">
+                        <p>{ cartItem.price }</p>
+                        <QuantityBoxCart 
+                            quantity={cartItem.itemQuantity}
+                            onQuantityChanged={setItemQuantity} />
+                        <div className="cart-item-info info-desc-total">
+                            <p className="info-desc">Total: </p>
+                            <p>{ cartItem.itemQuantity * cartItem.price }</p>
+                        </div>
                     </div>
                 </div>
-               
+                <button className="cart-remove-item"
+                    onClick={removeFromCart}>
+                    Remove
+                </button>               
             </li>
         )
     })

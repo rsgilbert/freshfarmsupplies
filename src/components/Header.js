@@ -4,6 +4,8 @@ import { useHistory, Link } from 'react-router-dom'
 import logo from '../logo.png'
 import { Cart } from './Cart'
 import { SearchIcon } from './SearchIcon'
+import { HamburgerIcon } from './HamburgerIcon'
+import { AccountIcon } from './AccountIcon'
 
 export const Header = props => {
     const history = useHistory()
@@ -15,16 +17,25 @@ export const Header = props => {
             <div className="header-placeholder"></div>
             <header className="header">  
                 <div className="header-container">
-                    <div className="header-start">
+                    <ul className="header-links header-start">
+                        <li>
+                            <HamburgerIcon />
+                        </li>
+                        <li>
+                            <SearchIcon />
+                        </li>
+                    </ul>
+
+                    <div className="header-center">
                         <Link to="/">
                             <img className="header-logo"
                                 src={logo} alt="logo" />
-                        </Link>
-                        
-                    </div>    
+                        </Link>                        
+                    </div>
+
                     <ul className="header-links header-end">
                         <li>
-                            <SearchIcon />
+                            <AccountIcon />
                         </li>
                         <li>
                             <Cart />
