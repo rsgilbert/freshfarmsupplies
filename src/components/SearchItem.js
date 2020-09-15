@@ -16,7 +16,6 @@ export const SearchItem = ({ item }) => {
         <figure className="searchitem-figure" onClick={goToItemPage}>
             <img 
                 src={item.pictures[0]}
-                alt="searchitem-image"
                 />
             <figcaption>
                 <div className="searchitem-name">

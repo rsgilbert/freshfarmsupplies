@@ -1,0 +1,92 @@
+.newitempagepictures {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.picturelist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 16em;
+    grid-gap: 1em;
+}
+
+
+@media(min-width: 35em) {
+    .picturelist {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+.picture-form {
+    display: flex;
+
+
+}
+.upload-label {
+    border: 1px solid wheat;
+    border-radius: 4px;
+    color: var(--theme-dark);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;  
+}
+
+.upload-label:hover {
+    color: white;
+    background-color: wheat;
+}
+
+.picture-save {
+
+}
+
+
+.pictures-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pictures-heading * {
+    flex: 1;
+}

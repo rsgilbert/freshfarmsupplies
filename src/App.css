@@ -50,6 +50,9 @@ body {
     min-width: 70%;
 }
 
+.main-container > div {
+    width: 100%;
+}
 button {
   cursor: pointer;
 }
@@ -107,4 +110,20 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.success-button {
+  padding: .8em;
+  background-color: green;
+  border: 0;
+  color: white;
+  border-radius: 4px;
+}
+
+.block-button {
+    width: 80%;
+    margin: 0 auto;
+    position: sticky;
+    bottom: 1em;
+    z-index: 1;
 }

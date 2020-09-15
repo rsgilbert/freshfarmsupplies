@@ -1,14 +1,16 @@
 import React from 'react'
-import './ItemListPage.css'
+import './AdminPage.css'
 import { useSelector } from 'react-redux'
-import { selectAllItems } from './itemlistSlice'
+import { selectAllItems } from '../itemlist/itemlistSlice'
 import { Item } from '../../components/Item'
 import { CategoriesSidebar } from '../../components/CategoriesSidebar'
+import { useHistory } from 'react-router-dom'
 
 
 
-export const ItemListPage = props => {
+export const AdminPage = props => {
     const itemlist = useSelector(selectAllItems)
+    const history = useHistory()
     
     const renderItemList = itemlist.map(item => {
         return (
@@ -19,9 +21,16 @@ export const ItemListPage = props => {
         )
     })
 
+    const goToNewItem = () => history.push("/admin/new")
+
     return (
-            <div className="itemlist">                
+        <div className="picturelist">
+            <button className="new-item" onClick={goToNewItem}>
+                New
+            </button>
+            <div class="itemlist">                
                 {renderItemList}
             </div>
+        </div>
     )
 }

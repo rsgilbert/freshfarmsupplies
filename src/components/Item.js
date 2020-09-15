@@ -16,7 +16,6 @@ export const Item = ({ item }) => {
         <figure class="item-figure" onClick={goToItemPage}>
             <img 
                 src={item.pictures[0]}
-                alt="item-image"
                 />
             <figcaption>
                 <div className="item-name">

@@ -1,9 +1,15 @@
-.categories {
-    display: none;
+.new-item {
+    background-color: rgb(38, 139, 38);
+    border: none;
+    border-radius: 4px;
+    margin: 1em 0;
+    color: white;
+    padding: .5em 1.5em;
 }
 
-.itemlist-grid {
-    width: 100%;
+.picturelist {
+    display: grid;
+    
 }
 
 .itemlist {
