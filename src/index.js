@@ -6,6 +6,12 @@ import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
+import { fetchItems, watchItems } from './features/itemlist/itemlistSlice';
+
+store.dispatch(fetchItems())
+store.dispatch(watchItems())
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

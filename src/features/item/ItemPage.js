@@ -1,26 +1,35 @@
 import React, { useState } from 'react'
 import { getIdFromWindow } from '../../functions'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectItem } from '../itemlist/itemlistSlice'
+import { selectItem, selectAllItems } from '../itemlist/itemlistSlice'
 import  { cartAdded, selectIsCarted, selectCartItemQuantity } from '../cart/cartSlice'
 import classNames from 'classnames'
 
 
 import './ItemPage.css'
 import { QuantityBox } from '../../components/QuantityBox'
+import { Loading } from '../../components/Loading'
 
 export const ItemPage = props => {
     const id = getIdFromWindow()
-    const item = useSelector(state => selectItem(state, id))
-    const pictures = item.pictures
+    const { status, item } = useSelector(state => selectItem(state, id))
+    console.log(item)
     const [currentPictureIdx, setCurrentPictureIdx] = useState(0)
     const dispatch = useDispatch()
-    const isCarted = useSelector(state => selectIsCarted(state, item.id))
-    const cartItemQuantity = useSelector(state => selectCartItemQuantity(state, item.id))
+    const isCarted = useSelector(state => selectIsCarted(state, id))
+    const cartItemQuantity = useSelector(state => selectCartItemQuantity(state, id))
     const [itemQuantity, setItemQuantity] = useState(isCarted ? cartItemQuantity : 1)
 
     const onQuantityChanged = itemQuantity => setItemQuantity(itemQuantity)
 
+    let content
+    if(status !== 'succeeded') {
+        return <Loading />
+    } 
+
+    const pictures = item.pictures
+    
+  
     
     const renderNonCurrentPictures = () => pictures.map((picture, index) => {
         const changeCurrentPicture = () => setCurrentPictureIdx(index)

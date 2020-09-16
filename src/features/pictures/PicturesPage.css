@@ -9,6 +9,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 16em;
     grid-gap: 1em;
+    margin-bottom: 1em;
 }
 
 
@@ -58,22 +59,23 @@
 
 }
 .upload-label {
-    border: 1px solid wheat;
+    border: 1px solid rgb(216, 247, 243);
     border-radius: 4px;
-    color: var(--theme-dark);
+    /* color: var(--theme-dark); */
+    color: rgb(54, 192, 178);
     width: 100%;
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: whitesmoke;
+    background-color: rgb(236, 252, 249);
     cursor: pointer;
     font-weight: bold;  
 }
 
 .upload-label:hover {
     color: white;
-    background-color: wheat;
+    background-color: turquoise;
 }
 
 .picture-save {

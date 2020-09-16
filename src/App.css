@@ -5,6 +5,7 @@
   --theme-gray: rgb(112, 112, 112);
   --theme-dark: #3A3A3A;
   --theme-color--dark: #7d881e;
+  --theme-turq: rgb(92, 241, 227);
 }
 
 @media(min-width: 50em) {

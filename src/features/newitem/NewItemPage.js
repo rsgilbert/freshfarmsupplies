@@ -7,24 +7,26 @@ import "firebase/storage"
 import './NewItemPage.css'
 import { useHistory } from 'react-router-dom'
 import { newitemUpdated } from './newitemSlice.js'
-
+import { PageTitle } from '../../components/PageTitle'
+import { ActionButton } from '../../components/ActionButton'
 
 
 export const NewItemPage = props => {
     const history = useHistory()
     const dispatch = useDispatch()
     const [name, setName] = useState("")
+    const [category, setCategory] = useState('')
     const [price, setPrice] = useState(0)
     const [specs, setSpecs] = useState("")
     const [description, setDescription] = useState("")
     const [pictureFiles, setPictureFiles] = useState([])
     const [pictures, setPictures] = useState([])
     const onNameChanged = e => setName(e.target.value)
+    const onCategoryChanged = e => setCategory(e.target.value)
     const onSpecsChanged = e => setSpecs(e.target.value)
     const onPriceChanged = e => setPrice(parseInt(e.target.value))
     const onDescriptionChanged = e => setDescription(e.target.value)
   
-    const storage = firebase.storage()
     const db = firebase.firestore()
 
     
@@ -53,13 +55,14 @@ export const NewItemPage = props => {
             .set({
                 id: timeString,
                 createdAt: time,
-                name, price, specs, description
+                name, price, specs, description, category
             })
         history.push(`/admin/items/${timeString}/pictures`)
     }
 
     return (
         <div className="newitempage">
+            <PageTitle title="Details" />
             <form onSubmit= {onSubmitForm}>
                 <div className="label-input">             
                     <label htmlFor="name">
@@ -70,6 +73,18 @@ export const NewItemPage = props => {
                         type="text"
                         value={name}
                         onChange={onNameChanged}
+                        />  
+                </div>
+
+                <div className="label-input">             
+                    <label htmlFor="category">
+                        Category
+                    </label>
+                    <input
+                        id="category"
+                        type="text"
+                        value={category}
+                        onChange={onCategoryChanged}
                         />  
                 </div>
 
@@ -122,10 +137,10 @@ export const NewItemPage = props => {
                     {/* <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
                     <label for="file">Choose a file</label> */}
 
-                    
-                    <button onClick={saveAndGoToPictures}>
-                        save
-                    </button>
+                    <ActionButton 
+                        onClick={saveAndGoToPictures}
+                        title="save"
+                        />
                 </div>
             </form>
         </div>

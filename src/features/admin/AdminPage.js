@@ -5,12 +5,14 @@ import { selectAllItems } from '../itemlist/itemlistSlice'
 import { Item } from '../../components/Item'
 import { CategoriesSidebar } from '../../components/CategoriesSidebar'
 import { useHistory } from 'react-router-dom'
+import { Loading } from '../../components/Loading'
 
 
 
 export const AdminPage = props => {
-    const itemlist = useSelector(selectAllItems)
+    const { itemlist, status } = useSelector(selectAllItems)  
     const history = useHistory()
+
     
     const renderItemList = itemlist.map(item => {
         return (
@@ -21,11 +23,19 @@ export const AdminPage = props => {
         )
     })
 
+    
+
     const goToNewItem = () => history.push("/admin/new")
 
+    if(status !== 'succeeded') {
+        return <Loading />
+    }
+
     return (
-        <div className="picturelist">
-            <button className="new-item" onClick={goToNewItem}>
+        <div>
+            <button 
+                className="new-item" 
+                onClick={goToNewItem}>
                 New
             </button>
             <div class="itemlist">                

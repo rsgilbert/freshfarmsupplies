@@ -1,0 +1,44 @@
+[debug] [2020-09-16T17:35:03.941Z] ----------------------------------------------------------------------
+[debug] [2020-09-16T17:35:03.942Z] Command:       /usr/local/lib/nodejs/node-v12.18.2-linux-x64/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-09-16T17:35:03.943Z] CLI Version:   8.6.0
+[debug] [2020-09-16T17:35:03.943Z] Platform:      linux
+[debug] [2020-09-16T17:35:03.943Z] Node Version:  v12.18.2
+[debug] [2020-09-16T17:35:03.943Z] Time:          Wed Sep 16 2020 20:35:03 GMT+0300 (East Africa Time)
+[debug] [2020-09-16T17:35:03.943Z] ----------------------------------------------------------------------
+[debug] [2020-09-16T17:35:03.943Z] 
+[debug] [2020-09-16T17:35:03.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-16T17:35:03.949Z] > authorizing via signed-in user
+[debug] [2020-09-16T17:35:03.949Z] [iam] checking project milzcollection for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-16T17:35:03.951Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-16T17:35:03.952Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-16T17:35:03.964Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-09-16T17:35:03.964Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-16T17:35:03.965Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-16T17:35:03.967Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-09-16T17:35:03.971Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/auth.js:23:32)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/commands/login.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at loadCommand (/usr/local/lib/node_modules/firebase-tools/lib/commands/index.js:5:19)
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/commands/index.js:89:20)
+[error] 
+[error] Error: Failed to get Firebase project milzcollection. Please make sure the project exists and your account has permission to access it.

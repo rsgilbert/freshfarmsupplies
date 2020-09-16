@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux'
 import { selectAllItems } from './itemlistSlice'
 import { Item } from '../../components/Item'
 import { CategoriesSidebar } from '../../components/CategoriesSidebar'
+import { Loading } from '../../components/Loading'
 
 
 
 export const ItemListPage = props => {
-    const itemlist = useSelector(selectAllItems)
+    const { itemlist, status } = useSelector(selectAllItems)
     
     const renderItemList = itemlist.map(item => {
         return (
@@ -19,9 +20,15 @@ export const ItemListPage = props => {
         )
     })
 
+    if(status !== 'succeeded') {
+        return <Loading />
+    }
+
+
     return (
             <div className="itemlist">                
                 {renderItemList}
             </div>
     )
 }
+

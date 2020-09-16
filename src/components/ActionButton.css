@@ -1,0 +1,16 @@
+.action-button {
+    background-color: var(--theme-turq);
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.5em;
+    padding: .5em;
+    border: 0;
+    max-width: 5em;
+}
+
+.action-button:hover {
+    background-color: turquoise;
+}

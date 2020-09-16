@@ -1,7 +1,6 @@
 import React from 'react';
-import { IndexPage } from './features/index/IndexPage'
 import './App.css';
-
+import './CustomStyles.css'
 import {
   BrowserRouter as Router,
   Switch, Route, Redirect
@@ -14,12 +13,12 @@ import { CartPage } from './features/cart/CartPage';
 import { SearchPage } from './features/search/SearchPage';
 import { AdminPage } from './features/admin/AdminPage';
 import { NewItemPage } from './features/newitem/NewItemPage';
-import { initializeFirebase } from './functions';
 import { PicturesPage } from './features/pictures/PicturesPage';
+import { EditPage } from './features/edit/EditPage';
+import { initializeFirebase } from './functions';
 
 
 function App() {
-  initializeFirebase()
 
   return (
     <div className="app">
@@ -35,6 +34,7 @@ function App() {
               <Route exact path="/admin" component={AdminPage} />
               <Route exact path="/admin/new" component={NewItemPage} />
               <Route exact path="/admin/items/:id/pictures" component={PicturesPage} />
+              <Route exact path="/admin/items/:id" component={EditPage} />
               <Redirect to="/" />
             </Switch>
           </div>   

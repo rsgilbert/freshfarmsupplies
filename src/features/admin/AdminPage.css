@@ -7,10 +7,6 @@
     padding: .5em 1.5em;
 }
 
-.picturelist {
-    display: grid;
-    
-}
 
 .itemlist {
     grid-column: itemlist;
@@ -30,12 +26,6 @@
         width: 100%;
     }
     
-    .categories {
-        display: block;
-        grid-column: categories;
-        grid-row: row 1;
-    }
-
     .itemlist {
         grid-column: itemlist;
         grid-row: row 1;

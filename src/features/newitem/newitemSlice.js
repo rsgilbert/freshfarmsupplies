@@ -24,7 +24,7 @@ const newitemSlice = createSlice({
     extraReducers: {
         [saveItem.fulfilled]: (state, action) => {
             console.log("fullfilled extra reducer")
-        }
+        },
     }
 })
 

@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 export const Item = ({ item }) => {
     const history = useHistory()
+    const picture = item.pictures && item.pictures[0]
 
     const goToItemPage = () => {
         history.push(`/items/${item.id}`)
@@ -13,9 +14,9 @@ export const Item = ({ item }) => {
 
 
     return (
-        <figure class="item-figure" onClick={goToItemPage}>
+        <figure className="item-figure" onClick={goToItemPage}>
             <img 
-                src={item.pictures[0]}
+                src={picture}
                 />
             <figcaption>
                 <div className="item-name">
