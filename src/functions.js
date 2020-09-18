@@ -6,6 +6,7 @@ export function getIdFromWindow() {
     return pathname.substring(7)
 }
 
+
 // eg 
 // for http://localhost:3000/admin/items/kRx9WrRtwRjGrmzULbik/pictures
 // id = getIdFromPath(3)

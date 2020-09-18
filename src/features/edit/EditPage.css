@@ -8,6 +8,11 @@
     }
 }
 
+.edit-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .item-current-image {
     height: 60vh;
     width: 100%;
@@ -103,3 +108,4 @@ button.buy-it-now {
     }
 
 }
+

@@ -53,10 +53,13 @@
 
 .header-links li {
     display: flex;
-    margin-left: 1em;
     cursor: pointer;
 }
 
-.header-start {
-    /* flex: 1; */
+.header-start li {
+    margin-right: 1em;
+}
+
+.header-end li {
+    margin-left: 1em;
 }

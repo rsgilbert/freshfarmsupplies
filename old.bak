@@ -39,3 +39,6 @@
         //         "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/5BEFB705-5F35-4007-A338-AE193E5C20F0.jpeg",
         //     ]
         // },
+
+            "react": "^16.13.1",
+    "react-dom": "^16.13.1",

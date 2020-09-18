@@ -43,10 +43,6 @@
     background-color: red;
 }
 
-.inputfile + label {
-	cursor: pointer; /* "hand" cursor */
-}
-
 .inputfile:focus + label {
 	outline: 1px dotted #000;
 	outline: -webkit-focus-ring-color auto 5px;
@@ -55,27 +51,26 @@
 
 .picture-form {
     display: flex;
-
-
 }
+
+
 .upload-label {
-    border: 1px solid rgb(216, 247, 243);
+    border: 3px solid rgb(105, 100, 100);
     border-radius: 4px;
-    /* color: var(--theme-dark); */
-    color: rgb(54, 192, 178);
-    width: 100%;
-    flex: 1;
+    padding: 1.5em 2em;
+    color: white;
+    margin: .5em auto 2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(236, 252, 249);
+    background-color: rgb(131, 127, 127);
     cursor: pointer;
     font-weight: bold;  
+
 }
 
 .upload-label:hover {
-    color: white;
-    background-color: turquoise;
+    text-decoration: underline;
 }
 
 .picture-save {

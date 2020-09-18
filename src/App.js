@@ -16,6 +16,26 @@ import { NewItemPage } from './features/newitem/NewItemPage';
 import { PicturesPage } from './features/pictures/PicturesPage';
 import { EditPage } from './features/edit/EditPage';
 import { initializeFirebase } from './functions';
+import {
+  useFirestoreDocData,
+  useFirestore,
+  SuspenseWithPerf
+} from "reactfire";
+
+function Milz() {
+  // lazy load the Firestore SDK
+  // and create a ref
+  const milzRef = useFirestore()
+    .collection("items")
+    .doc("1600282297713")
+
+  const milz = useFirestoreDocData(milzRef)
+  return (
+    <p>
+      The milz is { milz.name }
+    </p>
+  )
+}
 
 
 function App() {
@@ -24,21 +44,26 @@ function App() {
     <div className="app">
       <Router>
         <Header />
-        <main>
-          <div className="main-container">
-            <Switch>
-              <Route exact path="/" component={ItemListPage} />
-              <Route exact path="/items/:itemId" component={ItemPage} />
-              <Route exact path="/cart" component={CartPage} />
-              <Route exact path="/search" component={SearchPage} />
-              <Route exact path="/admin" component={AdminPage} />
-              <Route exact path="/admin/new" component={NewItemPage} />
-              <Route exact path="/admin/items/:id/pictures" component={PicturesPage} />
-              <Route exact path="/admin/items/:id" component={EditPage} />
-              <Redirect to="/" />
-            </Switch>
-          </div>   
-        </main>
+        <SuspenseWithPerf
+          fallback={<p>loading...</p>}
+          traceId={"loading-status"}
+          >
+          <main>
+            <div className="main-container">
+              <Switch>
+                <Route exact path="/" component={ItemListPage} />
+                <Route exact path="/items/:itemId" component={ItemPage} />
+                <Route exact path="/cart" component={CartPage} />
+                <Route exact path="/search" component={SearchPage} />
+                <Route exact path="/admin" component={AdminPage} />
+                <Route exact path="/admin/new" component={NewItemPage} />
+                <Route exact path="/admin/items/:id/pictures" component={PicturesPage} />
+                <Route exact path="/admin/items/:id" component={EditPage} />
+                <Redirect to="/" />
+              </Switch>
+            </div>   
+          </main>
+        </SuspenseWithPerf>        
       </Router>
       <Footer />
     </div>
