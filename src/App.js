@@ -21,6 +21,7 @@ import {
   useFirestore,
   SuspenseWithPerf
 } from "reactfire";
+import { ManageItems } from './features/admin/items/ManageItems';
 
 function Milz() {
   // lazy load the Firestore SDK
@@ -59,6 +60,7 @@ function App() {
                 <Route exact path="/admin/new" component={NewItemPage} />
                 <Route exact path="/admin/items/:id/pictures" component={PicturesPage} />
                 <Route exact path="/admin/items/:id" component={EditPage} />
+                <Route exact path="/admin/items" component={ManageItems} />
                 <Redirect to="/" />
               </Switch>
             </div>   
