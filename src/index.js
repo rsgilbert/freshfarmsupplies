@@ -11,8 +11,8 @@ import {
   FirebaseAppProvider
 } from "reactfire";
 
-store.dispatch(fetchItems())
-store.dispatch(watchItems())
+// store.dispatch(fetchItems())
+// store.dispatch(watchItems())
 
 const firebaseConfig = {
   apiKey: "AIzaSyAiFmYX7tWxC5F6amDtJnDiOfxzipveCoY",

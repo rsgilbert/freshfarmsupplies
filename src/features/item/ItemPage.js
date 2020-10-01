@@ -23,9 +23,9 @@ export const ItemPage = props => {
     const onQuantityChanged = itemQuantity => setItemQuantity(itemQuantity)
 
     let content
-    if(status !== 'succeeded') {
-        return <Loading />
-    } 
+    // if(status !== 'succeeded') {
+    //     return <Loading />
+    // } 
 
     const pictures = item.pictures
     

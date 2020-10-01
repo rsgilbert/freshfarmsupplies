@@ -20,9 +20,9 @@ export const ItemListPage = props => {
         )
     })
 
-    if(status !== 'succeeded') {
-        return <Loading />
-    }
+    // if(status !== 'succeeded') {
+    //     return <Loading />
+    // }
 
 
     return (
