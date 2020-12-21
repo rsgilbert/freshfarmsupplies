@@ -1,62 +1,87 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import * as firebase from "firebase/app"
-import "firebase/firestore"
+// import * as firebase from "firebase/app"
+// import "firebase/firestore"
 import { initializeFirebase } from '../../functions'
 
 const initialState = {
     itemlist: [
         {
             id: "1",
-            name: "Mix Pattern iPhone Case",
-            description: "Color: Multicolor. Composition: 100% TPU. Pattern Type: Graphic. Type: Phone Cases",
-            price: 23000,
-            specs: "7/8, 7P/8P, X",
-            quantity: "3@ & 2X",
+            name: "Tomatoes",
+            description: "Ripe tomatoes",
+            price: 500,
+            specs: "",
+            quantity: "",
             pictures: [
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/7EB91210-25AE-4EE5-B60E-56599ED8A714.jpeg",
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/F4033A57-0473-4014-B35B-AE70561DB6D8.jpeg",
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/E4936DBC-904B-4EF4-806F-A2D4A34628A2.jpeg",
-            
+                "/tomato.jpg"
             ]
         },
         {
             id: "2",
-            name: "Contrast Lace Satin Cami PJ Set",
-            description: "Size Medium, Size Large",
-            price: 60000,
-            specs: "7/8, 7P/8P, X",
-            quantity: "3@ & 2X",
+            name: "Beans",
+            description: "Tasty beans",
+            price: 4000,
+            specs: "",
+            quantity: "",
             pictures: [
-                "https://firebasestorage.googleapis.com/v0/b/milzcollection.appspot.com/o/D9D00A76-0D85-4950-8780-6EDF32F0DDC8.jpeg?alt=media&token=bf104c2d-ac7e-417a-bdc1-0681271a0657"
-                ,"https://firebasestorage.googleapis.com/v0/b/milzcollection.appspot.com/o/12CCCEFF-3987-4D60-9796-5A7071E39C6B.jpeg?alt=media&token=584f52ec-b4c6-415b-9d1a-0c19c549ac6e"
-                ,"https://firebasestorage.googleapis.com/v0/b/milzcollection.appspot.com/o/8F5807D1-1869-40D4-94CE-5A63925DF638.jpeg?alt=media&token=f4177bad-5790-497d-a865-7d55c66847ba"
+                "/beans.jpg",
+                "/beans.jpg"
             ]
         },
         {
             id: "3",
-            name: "Colored Pattern iPhone Case",
-            description: "Color: Multicolor. Composition: 100% TPU. Pattern Type: Graphic. Type: Phone Cases",
-            price: 23000,
-            specs: "7/8, 7P/8P, X",
-            quantity: "3@ & 2X",
+            name: "Green paper",
+            description: "Right from the garden green paper",
+            price: 300,
+            specs: "",
+            quantity: "",
             pictures: [
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/1AA62C90-ADAD-4EBB-BFBA-C54AA67961F4.jpeg",
-               "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/C426E3F1-FAA4-46A1-B5BE-8E9FC6A4AA25.jpeg",
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/5BEFB705-5F35-4007-A338-AE193E5C20F0.jpeg",
+                "/greenpaper.jpg"
             ]
         },
         {
-            id: "1",
-            name: "Beautiful Pattern iPhone Case",
-            description: "Color: Multicolor. Composition: 100% TPU. Pattern Type: Graphic. Type: Phone Cases",
-            price: 23000,
-            specs: "7/8, 7P/8P, X",
-            quantity: "3@ & 2X",
+            id: "4",
+            name: "Ginger",
+            description: "Surreptitious Ginger",
+            price: 1000,
+            specs: "",
+            quantity: "2",
             pictures: [
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/E4936DBC-904B-4EF4-806F-A2D4A34628A2.jpeg",
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/7EB91210-25AE-4EE5-B60E-56599ED8A714.jpeg",
-                "https://emannore.sirv.com/Milz%20Collection.%20Consignment%201/F4033A57-0473-4014-B35B-AE70561DB6D8.jpeg",
-               
+                "/ginger2.jpg",
+                "ginger.jpg"                
+            ]
+        },
+        {
+            id: "5",
+            name: "Carrots",
+            description: "Fresh carrots",
+            price: 200,
+            specs: "",
+            quantity: "10",
+            pictures: [
+                "/carrot.jpg",           
+            ]
+        },
+        {
+            id: "6",
+            name: "Matooke",
+            description: "Masaaka grown matooke",
+            price: 20000,
+            specs: "Green",
+            quantity: "",
+            pictures: [
+                "/matooke.jpg"
+            ]
+        },
+        {
+            id: "7",
+            name: "Avocado",
+            description: "We have lots of avocado",
+            price: 2000,
+            specs: "Almost ripe",
+            quantity: "400",
+            pictures: [
+                "/avocado.jpg"
             ]
         },
     ],

@@ -13,7 +13,7 @@ export const SearchPage = props => {
     const itemlist = useSelector(selectAllItems)
     const [search, setSearch] = useState("")
 
-    const searchItems = itemlist.filter(item => {
+    const searchItems = itemlist.itemlist.filter(item => {
         return item.name.toLowerCase().includes(search)
             || item.description.toLowerCase().includes(search)
             || item.specs.toLowerCase().includes(search)

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css'
 import { useHistory, Link } from 'react-router-dom'
-import logo from '../logo.png'
+import logo from '../logo.jpg'
 import { Cart } from './Cart'
 import { SearchIcon } from './SearchIcon'
 import { HamburgerIcon } from './HamburgerIcon'
