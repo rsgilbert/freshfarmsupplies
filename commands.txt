@@ -2,4 +2,15 @@ To deploy on firebase
 - First run npm run build
 - Configure firestore on firebase first on the console website:
 - Run: firebase init
+- On the option What do you want to use as your public directory, enter build
 - Run: firebase deploy
+
+In firebase.json, set: 
+{ 
+    hosting { 
+        "site": "freshfarmsupplies",
+        ...
+    }
+}
+
+To deploy to a specific site, run: firebase deploy --only hosting:freshfarmsupplies
