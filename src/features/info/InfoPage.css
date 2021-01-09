@@ -1,0 +1,17 @@
+.info-pictures {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.info-pictures > * {
+    margin: 0 0.5em;
+}
+
+.info-pictures p {
+    margin: 0;
+}
+
+.info ol {
+    
+}

@@ -15,7 +15,9 @@ import { AdminPage } from './features/admin/AdminPage';
 import { NewItemPage } from './features/newitem/NewItemPage';
 import { PicturesPage } from './features/pictures/PicturesPage';
 import { EditPage } from './features/edit/EditPage';
+import { InfoPage } from './features/info/InfoPage';
 import { initializeFirebase } from './functions';
+
 import {
   useFirestoreDocData,
   useFirestore,
@@ -61,6 +63,7 @@ function App() {
                 <Route exact path="/admin/items/:id/pictures" component={PicturesPage} />
                 <Route exact path="/admin/items/:id" component={EditPage} />
                 <Route exact path="/admin/items" component={ManageItems} />
+                <Route exact path="/info" component={InfoPage} />
                 <Redirect to="/" />
               </Switch>
             </div>   

@@ -1,9 +1,15 @@
+To install firebase-tools run
+npm i -g firebase-tools
+
 To deploy on firebase
 - First run npm run build
 - Configure firestore on firebase first on the console website:
 - Run: firebase init
 - On the option What do you want to use as your public directory, enter build
 - Run: firebase deploy
+
+To deploy to freshfarmsupplies, run:
+firebase deploy --only hosting:freshfarmsupplies
 
 In firebase.json, set: 
 { 
@@ -12,5 +18,7 @@ In firebase.json, set:
         ...
     }
 }
+
+
 
 To deploy to a specific site, run: firebase deploy --only hosting:freshfarmsupplies
