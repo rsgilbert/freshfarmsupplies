@@ -38,7 +38,7 @@
 .info-name {
     text-transform: uppercase;
     font-size: larger;
-    letter-spacing: .6em;
+    letter-spacing: .4em;
 }
 
 @media(min-width: 35em) {

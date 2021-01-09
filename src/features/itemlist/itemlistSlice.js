@@ -81,7 +81,18 @@ const initialState = {
             specs: "Almost ripe",
             quantity: "400",
             pictures: [
-                "/avocado.jpg"
+                "/avocado.jpg", "/avocado2.jpg", "/avocado3.jpg"
+            ]
+        },
+        {
+            id: "8",
+            name: "Fresh beans",
+            description: "We have freshbeans",
+            price: 2000,
+            specs: "ripe",
+            quantity: "200",
+            pictures: [
+                "/freshbeans.jpg"
             ]
         },
     ],
